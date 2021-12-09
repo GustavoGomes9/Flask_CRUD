@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Page create</h1>
+<form action="/new">
+    <label for="lcontent">Place Name:</label>
+    <input type="text" id="id_content" name="content">
+    <label for="ldesc">Description:</label>
+    <input type="text" id="id_description" name="description">
+    <label for="lprice">Price:</label>
+    <input type="number" id="id_price" name="price">
+    <input type="submit" value="Submit" formmethod="post">
+</form>
+
+{% endblock %}

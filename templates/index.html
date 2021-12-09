@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Main Page</title>
+{% endblock%}
+
+{% block body %}
+<div class="container">
+    <h1>Table</h1>
+    <table id="things">
+        <tr>
+            <th>Content</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Options</th>
+        </tr>
+        {% for plan in plans %}
+            <tr>
+                <td>{{ plan.content }}</td>
+                <td>{{ plan.description }}</td>
+                <td>{{ plan.price }}RM</td>
+                <td>{{ plan.date_created }}</td>
+                <td>
+                    <a href="/delete/{{ plan.id }}">Delete</a>
+                    <br>
+                    <a href="/update/{{ plan.id }}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
